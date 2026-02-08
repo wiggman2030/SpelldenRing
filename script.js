@@ -71,6 +71,19 @@ const bossPic = [
     "./pictures/maliketh.jpeg"
 ]
 
+const customContexts = {
+    'tarnished': { display: "The ____ arises, guided by grace.", speakSentence: "The Tarnished arises, guided by grace." },
+    'grace': { display: "Touch the site of ____ to heal.", speakSentence: "Touch the site of Grace to heal." },
+    'elden': { display: "Mend the shattered ____.", speakSentence: "Mend the shattered Elden Ring." },
+    'malenia': { display: "____, Blade of Miquella.", speakSentence: "Malenia, Blade of Miquella." },
+    'radahn': { display: "Starscourge ____ holds the stars at bay.", speakSentence: "Starscourge Radahn holds the stars at bay." },
+    'godrick': { display: "____ the Grafted.", speakSentence: "Godrick the Grafted." },
+    'miquella': { display: "Kindly ____, Kindly Miquella.", speakSentence: "Kindly Miquella, Kindly Miquella." },
+    'ranni': { display: "Rise, witch of the stars, rise once more as ____ the Witch.", speakSentence: "Rise, witch of the stars, rise once more as Ranni the Witch." },
+    'morgott': { display: "____, the Omen King.", speakSentence: "Morgott, the Omen King." },
+    'melina': { display: "I am ____. I offer you an accord.", speakSentence: "I am Melina. I offer you an accord." }
+};
+
 const synth = window.speechSynthesis;
 let voice = null;
 
