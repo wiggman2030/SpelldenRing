@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spellden Ring - Word Adventure! ✨</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loading" class="hidden">
+        The Lands Between await... ⚔️
+    </div>
+
+    <div class="container">
+        <h1><span class="emoji">✨</span> SPELLDEN RING <span class="emoji">🧙‍♂️⚔️</span></h1>
+        
+        <div id="input-section">
+            <p style="font-size: 1.2rem; text-align: center;">
+                Enter the incantations thou wouldst master, Tarnished.<br>
+                One word per line or separated by commas.
+            </p>
+            <textarea id="words-input" placeholder="Tarnished, Grace, Elden Ring, Malenia, Godrick, Radahn"></textarea>
+            
+            <div id="save-section" class="hidden">
+                <p>Preserve this crafting recipe for future runs? 🗂️</p>
+                <input type="text" id="list-name" placeholder="e.g. The Lands Between" style="width: 100%; max-width: 400px;">
+                <button id="save-button" class="primary">Create Crafting Recipe</button>
+            </div>
+            
+            <div style="text-align: center;">
+                <button id="start-button" class="primary">Arise, Tarnished! ⚔️</button>
+            </div>
+            
+            <h3 style="margin-top: 40px; text-align: center;">Thy Saved Crafting Recipes 📜</h3>
+            <div id="saved-lists"></div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <button id="clear-saved" style="background:#9d0208; color:white;" 
+                        onclick="if(confirm('Erase ALL Crafting Recipes?')) clearSavedLists();">Burn All Crafting Recipes</button>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <button id="boss-button" class="retry">Enter Boss Arena! 🏰💀</button>
+            </div>
+
+            <div style="text-align: center; margin: 10px 0;">
+                <button id="reset-mistakes" class="delete" 
+                        onclick="if(confirm('Purge all mistake records? Future bosses will be weaker.')) resetMistakes();">
+                    Purge Mistake Ledger
+                </button>
+            </div>
+        </div>
+        
+        <div id="game-section" class="hidden" style="opacity: 0; transition: opacity 1s;">
+            <div class="progress"><span id="list-name2"></span><span id="current-word-num">1</span> of <span id="total-words">10</span></div>
+
+            <div id="boss-ui" class="boss-ui hidden">
+                <div id="boss-title">Boss Health</div>
+                <div class="health-container">
+                    <div id="health-bar" class="health-bar"></div>
+                </div>
+                <div id="boss-name"></div>
+                <div id="boss-pic-container"><img src="" alt="Boss" id="boss-pic"></div>
+            </div>
+            <div id="auto-speak-toggle" class="hidden">
+                <label>
+                    <input type="checkbox" id="auto-speak" checked> Auto-hear the chant 🔊
+                </label>
+            </div>
+
+            <p id="sentence"></p>
+            <button id="speak-button" class="speak">🔊 Hear the Elden Chant 🎧</button>
+            <br><br>
+            <input type="text" id="user-input" placeholder="Inscribe the word here..." autocomplete="off">
+            <button id="submit-button" class="submit">Cast Incantation 💥</button>
+            <p id="feedback"></p>
+        </div>
+        
+        <div id="results-section" class="hidden">
+            <h2 id="victory-title"></h2>
+            <p id="score" style="font-size: 1.6rem; text-align: center;"></p>
+            <div id="mistakes"></div>
+            <div style="text-align: center;">
+                <button id="retest-button" class="retry hidden">You Will Witness True Horror! 🔄</button>
+                <button id="restart-button" class="primary">New Game +1?</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
